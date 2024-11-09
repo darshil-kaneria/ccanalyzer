@@ -1,5 +1,5 @@
 from mininet.net import Mininet
-from mininet.node import Controller, OVSKernelSwitch
+from mininet.node import Controller
 from mininet.log import setLogLevel, info
 from mininet.link import TCLink
 from mininet.cli import CLI
@@ -228,7 +228,7 @@ def customTopology():
     config = read_config()
     num_hosts = len(config['cca'])
 
-    net = Mininet(controller=Controller, link=TCLink, switch=OVSKernelSwitch)
+    net = Mininet(controller=Controller, link=TCLink)
 
     info('--- Adding controller\n')
     net.addController('c0')
